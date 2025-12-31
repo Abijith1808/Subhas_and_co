@@ -12,6 +12,18 @@ html {
     font-size: 16px;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 1rem;
+        --section-spacing: 3rem;
+    }
+
+    html {
+        font-size: 15px;
+        /* Slightly scale down base font */
+    }
+}
+
 body {
     font-family: var(--font-sans);
     color: var(--text-main);
@@ -242,6 +254,38 @@ p {
     /* Fixed spacing from top (Header + Gap) */
 }
 
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 6rem;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 4rem;
+    }
+
+    .hero-content {
+        padding-left: var(--container-padding);
+        /* Ensure consistent padding */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+    }
+
+    .stats-grid {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -387,6 +431,17 @@ p {
     gap: 2rem;
 }
 
+@media (max-width: 640px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-img {
+        height: 250px;
+        /* Taller images on mobile as requested */
+    }
+}
+
 .product-card {
     background: var(--bg-white);
     border: 1px solid var(--border-color);
@@ -481,6 +536,18 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+}
+
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-image {
+        order: -1;
+        /* Image first on mobile */
+    }
 }
 
 .about-image {
@@ -1369,5 +1436,31 @@ p {
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+}
+
+@import "animations.css";
+
+/* Additional Mobile Polish */
+@media (max-width: 768px) {
+    .top-bar {
+        display: none;
+        /* Hide top bar on mobile to save space */
+    }
+
+    .main-header {
+        padding: 0.75rem 0;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info-cards {
+        width: 100%;
+    }
+
+    .contact-form-card {
+        padding: 1.25rem;
     }
 }
